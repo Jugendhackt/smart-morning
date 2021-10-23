@@ -25,12 +25,17 @@ def time_check():
             if timestamp == 0:
                 timestamp = time.time()
 
-            for device in device_timings:
-                current_time = time.time() - timestamp
-                if device_timings[device] < current_time:
-                    send_post(device)
-                    device_payloads[device] = True
+            try:
+                for device in device_timings:
+                    current_time = time.time() - timestamp
+                    print(device)
+                    if not device_payloads[device]:
+                        if float(device_timings[device]) * 60 < current_time:
+                            send_post(device)
+                            device_payloads[device] = True
 
+            except RuntimeError:
+                time_check()
         else:
             device_payloads = {}
 
@@ -60,10 +65,10 @@ def receive_data():
     data = json.loads(request.data)
 
     wakeup_time = data['wakeup_time']
-    device_timings = data['device_timings']
-    for devices in device_timings:
-        print(devices[0])
-        #device_timings[devices[0]] = devices[1]
+    devices_t = data['device_timings']
+    for devices in devices_t:
+        print(devices[0] + " " + devices[1])
+        device_timings[devices[0]] = devices[1]
     print(device_timings)
     enabled = data['enabled']
 
@@ -96,4 +101,3 @@ def disconnect():  # function to disconnect a device to the system
 
     print(known_devices)
     return ''
-
