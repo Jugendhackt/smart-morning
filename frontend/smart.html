@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Morning</title>
+    <link href="smart.css" rel="stylesheet" >
+
+</head>
+
+<body>
+    <header>
+        <h1>Smart Morning</h1>
+    </header>
+    <main>
+        <section>
+            <label for="wecker">Wecker:</label>
+            <input type="time" id="wecker">
+            <p id='uhrzeit'></p>
+        </section>
+        <section>
+            <h3>Geräte:</h3>
+            <ul>
+                <li> <label for="licht">Licht</label> <input type="checkbox" id="licht" onclick="visible('lichtZeit')">
+                    <input type="number" placeholder="Minuten vor/nach dem Aufstehen" id='lichtZeit' class='inputs'>
+                </li>
+                <li> <label for="heitzung">Heitzung</label> <input type="checkbox" id="heitzung"
+                        onclick="visible('heitzungZeit')">
+                    <input type="number" placeholder="Minuten vor/nach dem Aufstehen" id='heitzungZeit' class='inputs'>
+                </li>
+                <li> <label for="kaffemaschine">Kaffemaschine</label> <input type="checkbox" id="kaffemaschine"
+                        onclick="visible('kaffemaschineZeit')">
+                    <input type="number" placeholder="Minuten vor/nach dem Aufstehen" id='kaffemaschineZeit'
+                        class='inputs'>
+                </li>
+                <li> <label for="rolläden"> Rolläden </label> <input type="checkbox" id="rolläden"
+                        onclick="visible('rollädenZeit')">
+                    <input type="number" placeholder="Minuten vor/nach dem Aufstehen" id='rollädenZeit' class='inputs'>
+                </li>
+                <li> <label for="computer"> Computer </label> <input type="checkbox" id="computer"
+                        onclick="visible('computerZeit')">
+                    <input type="number" placeholder="Minuten vor/nach dem Aufstehen" id='computerZeit' class='inputs'>
+                </li>
+            </ul>
+            <button id='enter'>Enter</button>
+            <p id='info' ></p>
+        </section>
+    </main>
+
+</body>
+<script src="smart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</html>

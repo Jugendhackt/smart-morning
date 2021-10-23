@@ -1,0 +1,15 @@
+h1{
+   text-align: center;
+}
+.inputs{
+   display: none;
+}
+#uhrzeit{
+   color:red;
+}
+body{
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#anzeige{
+   color:white;
+}
