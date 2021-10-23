@@ -47,7 +47,7 @@ enter.addEventListener('click',function(){
    }
    $.ajax({
        type: "POST",
-       url: "http://192.168.4.91:5000/send",
+       url: "http://127.0.0.1:5000/send",
        contentType: "application/json",
        data: JSON.stringify({
         wakeup_time: weckZeit,
