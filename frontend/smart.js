@@ -2,12 +2,14 @@ let time;
 const enter =document.getElementById('enter');
 const input=['licht','heitzung', 'kaffemaschine','rolläden','computer' ];
 const body = document.getElementsByTagName('body');
+const list= document.querySelectorAll('#list li' );
 
 
 
 window.addEventListener('load',bild);
 window.addEventListener('resize',bild);
 function bild(){
+    console.log(list);
     console.log(body);
     if(window.innerWidth>900){
         document.body.style.backgroundImage='url(https://cdn.pixabay.com/photo/2016/11/18/14/40/balcony-1834990_960_720.jpg)';
@@ -16,15 +18,18 @@ function bild(){
     }
 }
 
-
-function visible(whichInput) {
-    time = document.getElementById(whichInput);
-    if (time.style.display == 'inline') {
-        time.style.display = 'none';
-    } else {
-        time.style.display = 'inline';
-    }
+for(let i=0;i<list.length;i++){
+    list[i].children[1].addEventListener("click", function(){
+        time =list[i].children[2] ;
+        if (time.style.display == 'inline') {
+            time.style.display = 'none';
+        } else {
+            time.style.display = 'inline';
+        }
+    })
 }
+
+
 
 enter.addEventListener('click',function(){
     console.log(window.innerWidth);
