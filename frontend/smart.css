@@ -12,7 +12,7 @@ h1{
 .inputs{
    display: none;
    width: 130px;
-   font-size: 8px;
+   font-size: 20px;
    height: 30px;
 }
 #uhrzeit{
@@ -54,4 +54,22 @@ ul{
 }
 span{
    background-color: rgba(175, 175, 175, 0.842);
+}
+button{
+   background-color: rgba(110, 110, 110, 0.747);
+   width: 20%;
+   height: 7vh;
+   margin-left:75%;
+   border: 2px rgba(110, 110, 110, 0.774) solid;
+}
+button:hover{
+   background-color: rgba(172, 172, 172, 0.747);
+   width: 20%;
+   height: 7vh;
+   margin-left:75%;
+   border: 2px rgba(110, 110, 110, 0.562) solid;
+}
+
+#info{
+   font-size:150%;
 }
