@@ -1,15 +1,57 @@
+
+header{
+   background-color:rgba(110, 110, 110, 0.562);
+   height: 10vh;
+}
 h1{
    text-align: center;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   margin:0;
+   padding-top:3vh;
 }
 .inputs{
    display: none;
+   width: 130px;
+   font-size: 8px;
+   height: 30px;
 }
 #uhrzeit{
    color:red;
+   font-size:50%;
 }
 body{
    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   margin:0;
+   background: fixed no-repeat  url(https://cdn.pixabay.com/photo/2021/08/06/17/06/breakfast-6526807_960_720.jpg);
+   background-size: 100% 100vh;
 }
 #anzeige{
    color:white;
+}
+#weckerr{
+   margin:auto;
+   border: 2px solid rgba(110, 110, 110, 0.562);
+   font-size:200%;
+   margin: 7vh 20%;
+   padding-top:3vh;
+   border-radius: 12px;
+   padding-left:10%;
+}
+#wecker{
+   display:block;
+   height: 10vh;
+   width:70%;
+   font-size: 110%;
+}
+h3{
+   border-bottom: rgba(110, 110, 110, 0.562) 2px solid;
+   font-size:200%;
+   margin-left:3%;
+   
+}
+ul{
+   font-size: 200%;
+}
+span{
+   background-color: rgba(175, 175, 175, 0.842);
 }

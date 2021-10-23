@@ -10,18 +10,18 @@
 
 </head>
 
-<body>
+<body id='body'>
     <header>
         <h1>Smart Morning</h1>
     </header>
     <main>
-        <section>
-            <label for="wecker">Wecker:</label>
+        <section id='weckerr'>
+            <label for="wecker"> <b> Wecker:</b></label>
             <input type="time" id="wecker">
             <p id='uhrzeit'></p>
         </section>
         <section>
-            <h3>Geräte:</h3>
+            <h3><span>Geräte:</span></h3>
             <ul>
                 <li> <label for="licht">Licht</label> <input type="checkbox" id="licht" onclick="visible('lichtZeit')">
                     <input type="number" placeholder="Minuten vor/nach dem Aufstehen" id='lichtZeit' class='inputs'>
@@ -30,7 +30,7 @@
                         onclick="visible('heitzungZeit')">
                     <input type="number" placeholder="Minuten vor/nach dem Aufstehen" id='heitzungZeit' class='inputs'>
                 </li>
-                <li> <label for="kaffemaschine">Kaffemaschine</label> <input type="checkbox" id="kaffemaschine"
+                <li> <label for="kaffemaschine">Kaffe</label> <input type="checkbox" id="kaffemaschine"
                         onclick="visible('kaffemaschineZeit')">
                     <input type="number" placeholder="Minuten vor/nach dem Aufstehen" id='kaffemaschineZeit'
                         class='inputs'>
