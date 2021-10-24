@@ -18,8 +18,9 @@ enabled = True
 
 
 def time_check():
-    global device_payloads
+    global device_payloads, enabled
     timestamp = 0
+    
     while True:
         if enabled and datetime.datetime.now().strftime('%H:%M') > wakeup_time:
             if timestamp == 0:
@@ -65,16 +66,22 @@ def index():
 @app.route('/send', methods=['POST'])
 @cross_origin()
 def receive_data():
-    global wakeup_time, device_timings, enabled
+    global wakeup_time, device_timings, enabled, device_payloads
     data = json.loads(request.data)
+
+    device_payloads = {}
 
     wakeup_time = data['wakeup_time']
     devices_t = data['device_timings']
     for devices in devices_t:
-        print(devices[0] + " " + devices[1])
         device_timings[devices[0]] = devices[1]
     print(device_timings)
     enabled = data['enabled']
+    
+    if not enabled:
+        for device in device_timings:
+              requests.post('http://{}/deactivate'.format(known_devices[device]),
+                  data={'device': device})
 
     print("WTime: {} | dTimings: {} | enabled: {}".format(wakeup_time, device_timings, enabled))
 
