@@ -54,28 +54,6 @@ enter.addEventListener('click', function () {
         dataType: "json",
     });
 
-    document.getElementById('info').innerHTML=`dein Wecker klingelt morgen um ${weckZeit}`;
-   for(let n=0;n<input.length;n++){
-       if(document.getElementById(input[n]+'Zeit').style.display=='inline'){
-           if(document.getElementById(input[n]+'Zeit').value==''){
-            document.getElementById(input[n]+'Zeit').value=0;
-           }
-           output.push([input[n],document.getElementById(input[n]+'Zeit').value]);
-       }
-   }
-   $.ajax({
-       type: "POST",
-       url: "http://127.0.0.1:5000/send",
-       contentType: "application/json",
-       data: JSON.stringify({
-        wakeup_time: weckZeit,
-        device_timings: output,
-        enabled: true
-       }),
-       dataType: "json",
-   });
-  
-
 })
 
 
