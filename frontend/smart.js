@@ -48,7 +48,7 @@ enter.addEventListener('click', function () {
         data: JSON.stringify({
             wakeup_time: weckZeit,
             device_timings: output,
-            enabled: false
+            enabled: true
         }),
         dataType: "json",
     });
