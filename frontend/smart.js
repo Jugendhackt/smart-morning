@@ -32,7 +32,7 @@ enter.addEventListener('click', function () {
     } else if (weckZeit !== '') {
         document.getElementById('uhrzeit').innerHTML = '';
     }
-<<<<<<< HEAD
+
     document.getElementById('info').innerHTML = `dein Wecker klingelt morgen um ${weckZeit}`;
     for (let n = 0; n < input.length; n++) {
         if (document.getElementById(input[n] + 'Zeit').style.display == 'inline') {
@@ -54,7 +54,6 @@ enter.addEventListener('click', function () {
         dataType: "json",
     });
 
-=======
     document.getElementById('info').innerHTML=`dein Wecker klingelt morgen um ${weckZeit}`;
    for(let n=0;n<input.length;n++){
        if(document.getElementById(input[n]+'Zeit').style.display=='inline'){
@@ -76,7 +75,7 @@ enter.addEventListener('click', function () {
        dataType: "json",
    });
   
->>>>>>> f3628f6e4fd0828c8b92553f19397ef81a167396
+
 })
 
 
