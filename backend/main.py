@@ -28,8 +28,8 @@ def time_check():
             try:
                 for device in device_timings:
                     current_time = time.time() - timestamp
-                    print(device)
-                    if not device_payloads[device]:
+
+                    if not device_payloads.__contains__(device):
                         if float(device_timings[device]) * 60 < current_time:
                             send_post(device)
                             device_payloads[device] = True
@@ -41,7 +41,11 @@ def time_check():
 
 
 def send_post(device):
-    print("sending post req to {}".format(device))
+    if known_devices.__contains__(device):
+        requests.post('http://{}/activate'.format(known_devices[device]), data={'device': device})
+        print("sending post req to {}".format(device))
+    else:
+        print("device {} not connected to system.".format(device))
 
 
 def setup_app():
@@ -82,6 +86,7 @@ def receive_data():
 def connect():  # function to connect a device to the system
     global known_devices
     name = request.form['name']
+    print("connected")
 
     if not known_devices.__contains__(name):
         known_devices[request.form['name']] = request.form['ip']
